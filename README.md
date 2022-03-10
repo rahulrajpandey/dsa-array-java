@@ -11,6 +11,7 @@ Some information in the problems can be found duplicated with respect to other p
 4. *[Hackerrank Array Practice Problems](https://www.hackerrank.com/domains/data-structures?filters%5Bsubdomains%5D%5B%5D=arrays)*
 5. *[Leetcode Array Problems](https://leetcode.com/tag/array/)*
 6. *[Codechef Array Problems](https://www.codechef.com/tags/problems/array)*
+7. *[iq.opengenus.org Array Problems](https://iq.opengenus.org/list-of-array-problems/)*
 
 ### Each code file contains:
 	- Problem Statement
