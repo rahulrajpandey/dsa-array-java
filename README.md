@@ -30,3 +30,17 @@ Some information in the problems can be found duplicated with respect to other p
 **Connect to me on [LinkedIn](https://www.linkedin.com/in/rahulrajpandey/)**
 
 ***
+
+# Notes on Array Data Structure
+**The Time Complexity of different operations in an array is:**
+
+| Array Operation                 | Assumed Time Complexity | Space Complexity |
+|---------------------------------|-------------------------|------------------|
+| Access i-th element             | O(1)                    | O(1)             |
+| Override element at i-th index  | O(1)                    | O(1)             |
+| Traverse all elements           | O(n)                    | O(1)             |
+| Insert element                  | O(n)                    | O(1)             |
+| Delete element                  | O(n)                    | O(1)             |
+
+-- O(1) complexity means Constant Time
+-- O(n) complexity in the above table, refers `n` as the length of the array. 
