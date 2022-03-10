@@ -28,7 +28,7 @@ Some information in the problems can be found duplicated with respect to other p
 	- Notes
 		- [If any]
 
-**Connect to me on [LinkedIn](https://www.linkedin.com/in/rahulrajpandey/)**
+**Connect to me on [LinkedIn](https://www.linkedin.com/in/rahulrajpandey/)** :relaxed:
 
 ***
 
