@@ -33,18 +33,21 @@ public class FindSubArrayWithGivenSum {
      * @param arr - array of unordered integers
      * @param n   - size of array
      * @param s   - required sum
-     *
-     * Output:
+     *            <p>
+     *            Output:
      * @return ArrayList of index positions of the subarray
-     *
+     * <p>
      * Operations:
-     * Iterate over array elements
-     * Hold the sum till current element in a variable
-     * Check if the sum is greater than required sum,
-     * If YES, start reducing the sum from the start index
-     * Check if the sum is equal to the required sum,
-     * If YES, set the start and end Index and break the iteration
-     * return the Indexes in the List
+     * - Declare the Arraylist that will contain the result
+     * - Declare the startIndex of subarray and initialize with 0
+     * - Declare a temporarySum to hold sum of elements of the subarray and initialize with 0
+     * - Iterate over array elements
+     * - Update temporarySum with adding the current element
+     * - Check if the temporarySum is greater than required sum,
+     * - If YES, start subtracting the temporarySum from the startIndex till it is smaller than the required sum
+     * - Check if the sum is equal to the required sum,
+     * - If YES, set the start and end Index in Arraylist and break the iteration
+     * - return the Arraylist
      */
     static ArrayList<Integer> subarraySum(int[] arr, int n, int s) {
         ArrayList<Integer> subArrayIndexes = new ArrayList<>();
@@ -52,7 +55,7 @@ public class FindSubArrayWithGivenSum {
         int temporarySum = 0;
 
         // edge case: all elements of Array is positive integer >= 1
-        if(s <= 0){
+        if (s <= 0) {
             subArrayIndexes.add(-1);
             return subArrayIndexes;
         }
