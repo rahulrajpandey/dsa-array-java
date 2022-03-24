@@ -29,4 +29,10 @@ public class LongestIncreasingSubsequenceLISTest {
     public void getLISTest2() {
         Assert.assertFalse(Arrays.equals(new Integer[]{10, 22, 33, 50, 60}, LongestIncreasingSubsequenceLIS.getLIS(new int[]{10, 22, 9, 33, 21, 50, 41, 60, 80})));
     }
+
+    // happy path or sunny day scenario
+    @Test
+    public void getLISCountNLonNTest(){
+        Assert.assertEquals(6, LongestIncreasingSubsequenceLIS.getLISCountNLonN(new int[]{10, 22, 9, 33, 21, 50, 41, 60, 80}, 9));
+    }
 }

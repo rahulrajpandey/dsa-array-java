@@ -28,13 +28,94 @@ import java.util.List;
 public class LongestIncreasingSubsequenceLIS {
 
     /**
+     * Objective: To find a suitable index in array to place Key
+     * Input:
+     * @param A   - array of integers
+     * @param l   - left index in A[]
+     * @param r   - right index in A[]
+     * @param key - item to be placed in A[]
+     *
+     * Output:
+     * @return the index where key can be placed in A[]
+     *
+     * Operations:
+     * - Iterate while left pointer does not pass over right pointer
+     * - Find middle index between left and right indices
+     * - Check if the middle element is greater than or equal to key
+     * - If YES, search in the left half
+     * - If NO, search in the right half
+     * - Finally return the suitable index
+     */
+    static int CeilIndex(int A[], int l, int r, int key) {
+        while (r - l > 1) {
+            int m = l + (r - l) / 2;
+            if (A[m] >= key)
+                r = m;
+            else
+                l = m;
+        }
+        return r;
+    }
+
+    /**
+     * Objective: Find the Longest Increasing Subsequence in A[]
+     *
+     * Input:
+     * @param A    - array of integers
+     * @param size - length of A[]
+     *
+     * Output:
+     * @return Longest Increasing Subsequence(LIS) count in A[]
+     *
+     * Operations:
+     * - Create an array tailTable to store LIS of input array A
+     * - Initialize tailTable with the A[0]
+     * - Set the Number of Items i.e. len in the tailTable to be 1
+     * - Iterate over A[] from Index 1
+     * - Check
+     * - If current element of A[] is less than tailTable[0], then update tailTable[0] with current element of A[]
+     * - Else If, current element of A[] is greater than tailTable's last element,
+     * - then update tailTable's last element with current element of A[] and also increment len to hold number of items
+     * - Else If, current element of A[] is neither greater than tailTable's last element nor smaller than the first element of tailTable
+     * - then find a suitable index in tailTable[] for placing the current element of A[]
+     * - and then insert the current element of A[] at that found index in tailTable[]
+     * - Finally, return the length of items in tailTable[] i.e. len
+     */
+    static int getLISCountNLonN(int A[], int size) {
+        // boundary condition
+        if (size < 1) {
+            return 0;
+        }
+        // array to hold LIS elements
+        int[] tailTable = new int[size];
+        tailTable[0] = A[0];
+        int len = 1; // Number of items in tailTable
+
+        for (int i = 1; i < size; i++) {
+            if (A[i] < tailTable[0]) {
+                // new smallest value
+                tailTable[0] = A[i];
+            } else if (A[i] > tailTable[len - 1]) {
+                // A[i] wants to extend the largest subsequence
+                tailTable[len++] = A[i];
+            } else {
+                // A[i] wants to be current end candidate of an existing
+                // subsequence. It will replace ceil value in tailTable
+                tailTable[CeilIndex(tailTable, -1, len - 1, A[i])] = A[i];
+            }
+        }
+        // return count of items in tailTable[]
+        return len;
+    }
+
+    /**
      * @param arr - array of unsorted Integers
      * @return count of LIS
      * <p>
      * Operations:
      * - Create a table to hold the LIS count and fill with 1 for all the indices
      * - Start iterating over array elements, for each element, iterate from first index to that index -1
-     * - Check for arr[j] < arr[i] and also LIS count till i
+     * - Check for (arr[j] < arr[i]) and (LIS count till i < LIS count till j + 1)
      * - update the LIS counter
      * - find max from the table and return
      */
