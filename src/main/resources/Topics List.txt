@@ -1,0 +1,10 @@
+--------------------------------------------------------------------------------------
+-   Topic Name                  |       Example Problem Class Name
+--------------------------------------------------------------------------------------
+- Sliding Window                |    gfg.CountSubarraysHavingSumInRange
+- Sliding Window                |    gfg.FindSubArrayWithGivenSum
+- LCS                           |    gfg.LongestCommonSubsequenceLCS
+- LIS                           |    gfg.LongestIncreasingSubsequenceLIS
+- Kadane's Algorithm            |    gfg.MaximumSumContiguousSubarray
+- Brian Kernighan's algorithm   |    gfg.MinimumAxorX
+- LIS                           |    gfg.MinimumOpsToConvertArrAToB

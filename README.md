@@ -53,6 +53,12 @@ Some information in the problems can be found duplicated with respect to other p
 - *Subset: Same as subsequence additionally it has empty set i.e. {1,3},{}*
 
 - *Given an array/sequence of size n, possible*
-	- Subarray = n*(n+1)/2
-	- Subseqeunce = (2^n) -1 (non-empty subsequences)
-	- Subset = 2^n
+    - Subarray = n*(n+1)/2
+    - Subseqeunce = (2^n) -1 (non-empty subsequences)
+    - Subset = 2^n
+
+- *Brian Kernighan’s Algorithm - Count Set Bits in a Number : O(log N)*
+    - If we subtract a number by 1 and do it bitwise & with itself (n & (n-1)), we unset the rightmost set bit. 
+    - If we do n & (n-1) in a loop and count the number of times the loop executes, we get the set bit count.
+    - The beauty of this solution is the number of times it loops is equal to the number of set bits in a given integer.
+    - In Java, Integer.bitCount() does the same.
